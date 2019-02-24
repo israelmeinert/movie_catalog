@@ -33,7 +33,7 @@ export class AgrMovieDetails extends Component {
             <p> Prêmios: {movie.awards}</p>
             </div>
             <div className="footer">
-              <button className="close" onClick={this.props.onClose}>
+              <button className="close" onClick={()=>this.props.closeModal(null)}>
                 Ok
               </button>
             </div>

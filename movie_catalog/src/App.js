@@ -10,7 +10,7 @@ class App extends Component {
 
   constructor(){
     super();
-    this.state = { movies: [], selectedMovie:null}
+    this.state = { movies: [], selectedMovie: null}
   }
 
   showDetailMovie( movie ){
@@ -34,7 +34,8 @@ class App extends Component {
           <AgrSearch></AgrSearch>
           <AgrMoviesList movies={this.state.movies} showDetails={ this.showDetailMovie.bind(this)}></AgrMoviesList>
         </main>
-        {(this.state.selectedMovie ? <AgrMovieDetails movie={this.state.selectedMovie}> </AgrMovieDetails> : '' )}
+        {(this.state.selectedMovie ? <AgrMovieDetails movie={this.state.selectedMovie} closeModal={this.showDetailMovie.bind(this) }
+        > </AgrMovieDetails> : '' )}
         
       </div>
     );
