@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans|Open+Sans');
+:root {
+  /* general */
+  --color-white: #fafafa;
+  --lg-font: 'Fira Sans', sans-serif;
+  --md-font: 'Open Sans', 'Semibold';
+  --lg-font-size: 30px;
+  --lg-font-color: #515163;
+  --btn-color: #1199dd;
+  --desc-color: #9196ac;
+  --title-list-movies: #767e92;
+  --strip-list-color: #f5f6f8;
+  --margin-components: 7px;
+  --width-container: 98%;
+  --background-color: #F1F2F5;
+  
+  /* search button */
+  --heigth-search-btn: 48px;
+  --width-search-btn: 96px;
+  --font-size-btn: 16px;
+
+    /* close button */
+  --heigth-close-btn: 24px;
+  --width-close-btn: 48px;
+
+  --btn-radius : 6px;
+  
+
+
+  /* list movies */
+  --movies-color-list: #f5f6f8;
+  --movies-color-list-variation: #FAFAFA ;
+
+
+}
+
+body {
+  background-color: #F1F2F5;
+}
+

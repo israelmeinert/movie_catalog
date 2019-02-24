@@ -1,0 +1,46 @@
+thead {
+  background-color: var(--color-white);
+  border-bottom: var(--background-color) 3px solid
+}
+
+tbody tr {
+  background-color: var(--movies-color-list);
+}
+
+tr:nth-child(even) {
+  background-color: var(--movies-color-list-variation);
+}
+
+.movies-list-container {
+  background-color: var(--color-white);
+  width: var(--width-container);
+  margin: var(--margin-components);
+}
+
+.movies-list{
+  width: 100%;
+  color: var(--title-list-movies);
+}
+
+.movie-title {
+  color: var(--btn-color);
+  cursor: pointer;
+}
+
+.movie-item, .table-header {
+  height: 50px;
+}
+
+.movie-item td {
+  text-align: center;
+  padding: 17px;
+}
+
+.movie-item .movie-title-container {
+  text-align: left;
+}
+
+.movie-title-container {
+  text-align: left;
+  padding: 17px;
+}

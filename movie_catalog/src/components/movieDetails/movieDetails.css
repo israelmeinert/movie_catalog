@@ -1,0 +1,54 @@
+.modal {
+  background-color: var(--background-color);
+  border-radius: 5px;
+  max-width: 650px;
+  min-height: 300px;
+  margin: 0 auto;
+  padding: 18px;
+  font-family: var(--md-font);
+  color: var(--desc-color);
+}
+
+.backdrop  {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0,0,0,0.3);
+  padding: 50px;
+}
+
+.poster-image {
+  height: 325px;
+  width: 250px;
+}
+
+.content-container {
+  display: inline-flex;
+}
+
+.footer {
+  text-align: right;
+}
+
+
+p {
+  margin: 3px;
+}
+
+.close {
+  background-color: var(--btn-color);
+  color: var(--color-white);
+  font-size: var(--font-size-btn);
+  height: var(--heigth-close-btn);
+  width: var(--width-close-btn);
+  border-radius: var(--btn-radius);
+  border: none;
+}
+
+.info-container {
+  word-break: break-word;
+  padding-left: 30px;
+  padding-right: 30px;
+}
