@@ -13,11 +13,18 @@ class App extends Component {
     this.state = { movies: [], selectedMovie: null}
   }
 
-  showDetailMovie( movie ){
+  showDetailMovie =  movie  =>{
     let { movies, selectedMovie  } =  this.state;
     selectedMovie = movie;
     console.log(selectedMovie);
     this.setState({movies, selectedMovie});
+  }
+
+  findByTitle = (title)=>{
+    let { movies, selectedMovie  } =  this.state;
+    omdbApi.SearchByTitle(title)
+      .then( movies => this.setState({ movies, selectedMovie }))
+      .catch(error => console.log(error));
   }
 
   componentWillMount(){
@@ -31,10 +38,10 @@ class App extends Component {
       <div className="App">
         <AgrHeader></AgrHeader>
         <main>
-          <AgrSearch></AgrSearch>
-          <AgrMoviesList movies={this.state.movies} showDetails={ this.showDetailMovie.bind(this)}></AgrMoviesList>
+          <AgrSearch search={this.findByTitle} ></AgrSearch>
+          <AgrMoviesList movies={this.state.movies} showDetails={ this.showDetailMovie}></AgrMoviesList>
         </main>
-        {(this.state.selectedMovie ? <AgrMovieDetails movie={this.state.selectedMovie} closeModal={this.showDetailMovie.bind(this) }
+        {(this.state.selectedMovie ? <AgrMovieDetails movie={this.state.selectedMovie} closeModal={this.showDetailMovie}
         > </AgrMovieDetails> : '' )}
         
       </div>
