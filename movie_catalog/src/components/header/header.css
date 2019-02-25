@@ -12,4 +12,5 @@
   font-family: var(--lg-font);
   font-size: var(--lg-font-size);
   color: var(--lg-font-color);
+  margin: 0;
 }

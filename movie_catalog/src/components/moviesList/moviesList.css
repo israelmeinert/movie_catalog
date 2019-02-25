@@ -28,16 +28,20 @@ tr:nth-child(even) {
 }
 
 .movie-item, .table-header {
-  height: 50px;
+  height: 35px;
 }
 
 .movie-item td {
   text-align: center;
-  padding: 17px;
+  padding: 12px;
 }
 
 .movie-item .movie-title-container {
   text-align: left;
+}
+
+a {
+  text-decoration: none;
 }
 
 .movie-title-container {

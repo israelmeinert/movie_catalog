@@ -37,7 +37,7 @@ export class AgrMoviesList extends Component{
 
 const AgrMovieItem = (props)=> (
   <tr className="movie-item">
-    <td className="movie-title-container"> <a className="movie-title" onClick={ ()=> props.showDetail(props.movie)} > { props.movie.title }</a></td>
+    <td className="movie-title-container"> <a href="#" className="movie-title" onClick={ ()=> props.showDetail(props.movie)} > { props.movie.title }</a></td>
     <td>{ props.movie.year }</td>
     <td>{props.movie.genre}</td>
   </tr>

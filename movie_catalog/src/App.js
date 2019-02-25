@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { AgrHeader } from './components/header/AgrHeader';
-import { AgrSearch } from './components/search/AgrSearch';
-import { AgrMoviesList } from './components/moviesList/AgrMoviesList';
-import { AgrMovieDetails } from './components/movieDetails/AgrMovieDetails';
+
+import { AgrHeader, AgrSearch, AgrMoviesList, AgrMovieDetails  } from './components/components.js';
 import OmdbApi from './api/OmdbApi';
 import '@fortawesome/fontawesome-free/css/all.css';
+
 const omdbApi = new OmdbApi();
 
 class App extends Component {
@@ -31,12 +30,6 @@ class App extends Component {
       this.setState({movies, selectedMovie})
     }
     
-  }
-
-  componentWillMount(){
-    omdbApi.SearchByTitle('lord of the rings')
-      .then( movies => this.setState({ movies }))
-      .catch(error => console.log(error));
   }
 
   render() {
