@@ -3,7 +3,7 @@ export default class OmdbApi {
   constructor(){
     this.key = 'ed5b01ef';
     this.url = `http://www.omdbapi.com/?apikey=${this.key}`;
-    this.itensPerPage = 10;
+    this.itemsPerPage = 10;
   }
 
   async request(query){
@@ -64,7 +64,7 @@ export default class OmdbApi {
   prepareListMovies({ Search }){
     let movies = Search
     movies = movies.map( (movie, counter) =>{
-      if (counter < this.itensPerPage)
+      if (counter < this.itemsPerPage)
         return this.findById(movie.imdbID);
       return null
     });

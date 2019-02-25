@@ -19,8 +19,16 @@ export class AgrSearch extends Component {
     return (
       <div id="mov ies-search" className="search-container">
         <i className="fas fa-search"></i>
-        <input value={ querySearch } onChange={this.inputHandler} type="search" placeholder= "Pesquisar" id="search-field"  className="search-field" /> 
-        <button type="submit" onClick={()=>this.props.search(querySearch)} className="search-button">APLICAR</button>
+        <input value={ querySearch } onChange={this.inputHandler} placeholder= "Pesquisar" id="search-field"  className="search-field" /> 
+        <button type="submit" 
+        onClick={()=>this.props.search(querySearch)} 
+        onKeyPress={ event =>{
+          console.log(event);
+          console.log(event.key);
+          if(event.key === "Enter")
+            this.props.search(querySearch)
+        }}
+        className="search-button">APLICAR</button>
       </div>
     )
   }

@@ -673,6 +673,10 @@
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
 
+"@fortawesome/fontawesome-free@^5.7.2":
+  version "5.7.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.7.2.tgz#1498c3eb78ee7c78c5488418707de90aaf58d5d7"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -6805,7 +6809,7 @@ react-dev-utils@^7.0.3:
     strip-ansi "5.0.0"
     text-table "0.2.0"
 
-react-dom@16.8.3:
+react-dom@^16.8.3:
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/react-dom/-/react-dom-16.8.3.tgz#ae236029e66210783ac81999d3015dfc475b9c32"
   dependencies:
@@ -6876,7 +6880,7 @@ react-scripts@2.1.5:
   optionalDependencies:
     fsevents "1.2.4"
 
-react@16.8.3:
+react@^16.8.3:
   version "16.8.3"
   resolved "https://registry.yarnpkg.com/react/-/react-16.8.3.tgz#c6f988a2ce895375de216edcfaedd6b9a76451d9"
   dependencies:

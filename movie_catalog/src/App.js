@@ -4,6 +4,7 @@ import { AgrSearch } from './components/search/AgrSearch';
 import { AgrMoviesList } from './components/moviesList/AgrMoviesList';
 import { AgrMovieDetails } from './components/movieDetails/AgrMovieDetails';
 import OmdbApi from './api/OmdbApi';
+import '@fortawesome/fontawesome-free/css/all.css';
 const omdbApi = new OmdbApi();
 
 class App extends Component {
@@ -16,15 +17,20 @@ class App extends Component {
   showDetailMovie =  movie  =>{
     let { movies, selectedMovie  } =  this.state;
     selectedMovie = movie;
-    console.log(selectedMovie);
     this.setState({movies, selectedMovie});
   }
 
   findByTitle = (title)=>{
     let { movies, selectedMovie  } =  this.state;
-    omdbApi.SearchByTitle(title)
+    if (title){
+      omdbApi.SearchByTitle(title)
       .then( movies => this.setState({ movies, selectedMovie }))
       .catch(error => console.log(error));
+    } else {
+      movies = [];
+      this.setState({movies, selectedMovie})
+    }
+    
   }
 
   componentWillMount(){

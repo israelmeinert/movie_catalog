@@ -23,7 +23,7 @@ export class AgrMoviesList extends Component{
           <tbody>
             { this.props.movies && this.props.movies.map( movie =>{
               return (
-                <AgrMovieItem movie={movie} showDetail={ this.showDetails.bind(this)} />
+                <AgrMovieItem movie={movie} key={movie.id} showDetail={ this.showDetails.bind(this)} />
               ) 
             })}
           </tbody>
@@ -36,15 +36,9 @@ export class AgrMoviesList extends Component{
 
 
 const AgrMovieItem = (props)=> (
-  <tr className="movie-item" key={props.movie.id}>
+  <tr className="movie-item">
     <td className="movie-title-container"> <a className="movie-title" onClick={ ()=> props.showDetail(props.movie)} > { props.movie.title }</a></td>
     <td>{ props.movie.year }</td>
     <td>{props.movie.genre}</td>
   </tr>
 )
-
-const AgrPanelDetails = (props) =>(
-  <dialog>
-    teste
-  </dialog>
-);
