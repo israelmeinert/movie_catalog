@@ -13,3 +13,5 @@ Olá, para dar inicio a o projeto,  deve ser seguido os seguintes passos:
 deve ser realizado manualmente.
 
 Pronto a aplicação esta rodando 🐱‍👤 .
+
+para atualizaçoes futuras olhar o site https://www.themoviedb.org/?language=en-US
