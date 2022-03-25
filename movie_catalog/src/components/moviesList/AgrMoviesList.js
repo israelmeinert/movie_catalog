@@ -1,44 +1,44 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './moviesList.css';
 
 
 
-export class AgrMoviesList extends Component{
+export function AgrMoviesList({ showDetails, movies }){
 
-  showDetails(movie){
-    this.props.showDetails(movie);
+  const showDetails1 = movie =>{
+   showDetails(movie);
   }
 
-  render(){
-    return (
-      <div className="movies-list-container">
-        <table id="movies-list" className="movies-list">
-          <thead>
-            <tr className="table-header">
-              <th className="movie-title-container">Titulo</th>
-              <th>Ano</th>
-              <th>Genero</th>
-            </tr>
-          </thead>
-          <tbody>
-            { this.props.movies && this.props.movies.map( movie =>{
-              return (
-                <AgrMovieItem movie={movie} key={movie.id} showDetail={ this.showDetails.bind(this)} />
-              ) 
-            })}
-          </tbody>
-        </table>
-      </div>
+  return (
+    <div className="movies-list-container">
+      <table id="movies-list" className="movies-list">
+        <thead>
+          <tr className="table-header">
+            <th className="movie-title-container">Titulo</th>
+            <th>Ano</th>
+            <th>Genero</th>
+          </tr>
+        </thead>
+        <tbody>
+          { movies && movies.map( movie =>{
+            return (
+              <AgrMovieItem movie={movie} key={movie.id} showDetail={ showDetails1 } />
+            ) 
+          })}
+        </tbody>
+      </table>
+    </div>
 
-    )
-  }
+  )
 }
 
 
-const AgrMovieItem = (props)=> (
+const AgrMovieItem = ({ movie, showDetail })=> (
   <tr className="movie-item">
-    <td className="movie-title-container"> <a href="#" className="movie-title" onClick={ ()=> props.showDetail(props.movie)} > { props.movie.title }</a></td>
-    <td>{ props.movie.year }</td>
-    <td>{props.movie.genre}</td>
+    <td className="movie-title-container"> 
+      <a href="#" className="movie-title" onClick={ ()=> showDetail(movie)} > { movie.title }</a>
+    </td>
+    <td>{ movie.year }</td>
+    <td>{ movie.genre }</td>
   </tr>
 )

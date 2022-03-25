@@ -1,12 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './movieDetails.css';
 
-export class AgrMovieDetails extends Component {
-
-
-  render(){
-    const { movie } = this.props;
-    return (
+export function AgrMovieDetails ({ movie, closeModal }){
+  return (
     <div className="backdrop" >
       <div className="modal" id="modal">
         <div className="content-container">
@@ -33,7 +29,7 @@ export class AgrMovieDetails extends Component {
             <p> Prêmios: {movie.awards}</p>
             </div>
             <div className="footer">
-              <button className="close" onClick={()=>this.props.closeModal(null)}>
+              <button className="close" onClick={()=>closeModal(null)}>
                 Ok
               </button>
             </div>
@@ -42,6 +38,5 @@ export class AgrMovieDetails extends Component {
         </div>
       </div>
     </div>
-    );
-  }
+  );
 }

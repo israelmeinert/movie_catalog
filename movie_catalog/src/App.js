@@ -1,51 +1,42 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 
-import { AgrHeader, AgrSearch, AgrMoviesList, AgrMovieDetails  } from './components/components.js';
-import OmdbApi from './api/OmdbApi';
+import { 
+    AgrHeader,
+    AgrSearch,
+    AgrMoviesList,
+    AgrMovieDetails
+} from './components/components.js';
+
+import { 
+    subscribeMovies,
+    subscribeSelectedMovie,
+    searchTitle,
+    selectMovie
+} from './services/movies';
+
 import '@fortawesome/fontawesome-free/css/all.css';
 
-const omdbApi = new OmdbApi();
 
-class App extends Component {
+function App () {
+  const [movies, setMovies] = useState([]);
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
-  constructor(){
-    super();
-    this.state = { movies: [], selectedMovie: null}
-  }
+  subscribeMovies(setMovies);
+  subscribeSelectedMovie(setSelectedMovie);
 
-  showDetailMovie =  movie  =>{
-    let { movies, selectedMovie  } =  this.state;
-    selectedMovie = movie;
-    this.setState({movies, selectedMovie});
-  }
+  return (
+    <div className="App">
+      <AgrHeader></AgrHeader>
+      <main>
+        <AgrSearch search={searchTitle} ></AgrSearch>
+        <AgrMoviesList movies={movies} showDetails={ selectMovie }></AgrMoviesList>
+      </main>
+      {(selectedMovie ? <AgrMovieDetails movie={selectedMovie} closeModal={selectMovie}
+      > </AgrMovieDetails> : '' )}
+      
+    </div>
+  );
 
-  findByTitle = (title)=>{
-    let { movies, selectedMovie  } =  this.state;
-    if (title){
-      omdbApi.SearchByTitle(title)
-      .then( movies => this.setState({ movies, selectedMovie }))
-      .catch(error => console.log(error));
-    } else {
-      movies = [];
-      this.setState({movies, selectedMovie})
-    }
-    
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <AgrHeader></AgrHeader>
-        <main>
-          <AgrSearch search={this.findByTitle} ></AgrSearch>
-          <AgrMoviesList movies={this.state.movies} showDetails={ this.showDetailMovie}></AgrMoviesList>
-        </main>
-        {(this.state.selectedMovie ? <AgrMovieDetails movie={this.state.selectedMovie} closeModal={this.showDetailMovie}
-        > </AgrMovieDetails> : '' )}
-        
-      </div>
-    );
-  }
 }
 
 export default App;
